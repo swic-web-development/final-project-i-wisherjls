@@ -15,10 +15,7 @@ export default function App() {
   }, [])
 
   return (
-    <main
-      style={{ backgroundColor: '#136c68' }}
-      className="flex min-h-screen flex-col items-center justify-center"
-    >
+    <main className="flex min-h-screen flex-col items-center justify-center bg-black">
       <Header />
       <PlanetsGrid planets={planets} />
     </main>

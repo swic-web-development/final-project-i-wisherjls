@@ -15,7 +15,7 @@ export default function Card({ planet }) {
   return (
     <section
       className="overflow-hidden rounded-lg shadow-md"
-      style={{ backgroundColor: '#D2B48C' }} // tan hex
+      style={{ backgroundColor: '#1e2124' }} // dark grey hex
     >
       <div className="p-4">
         <h2 className="text-xl font-semibold text-white">{name}</h2>
