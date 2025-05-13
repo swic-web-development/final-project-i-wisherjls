@@ -9,7 +9,15 @@ export default function App() {
     async function fetchPlanets() {
       const response = await fetch('https://swapi.tech/api/planets/')
       const data = await response.json()
-      setPlanets(data.results)
+      // Fetch details for each planet with ai help
+      const detailedPlanets = await Promise.all(
+        data.results.map(async (planet) => {
+          const res = await fetch(planet.url)
+          const detail = await res.json()
+          return detail.result.properties
+        }),
+      )
+      setPlanets(detailedPlanets)
     }
     fetchPlanets()
   }, [])
